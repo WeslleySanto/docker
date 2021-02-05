@@ -16,6 +16,14 @@ services:
   #     - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
   #   networks:
   #     - banco
+  
+  # db:
+  #   image: mysql:5.7
+  #   volumes:
+  #   - /var/lib/mysql
+  #   environment:
+  #   - MYSQL_ROOT_PASSWORD=phprs
+  #   - MYSQL_DATABASE=phprs
   web:
     # image: nginx:1.13
     build: ./web
