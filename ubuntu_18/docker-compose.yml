@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  ubuntu_18:
+    image: ubuntu_18:v1
+    container_name: ubuntu_18
+    restart: unless-stopped
+    volumes:
+      # - ${PWD}/etc/apache2:/etc/apache2
+      # - ${PWD}/etc/rsyslog.d:/etc/rsyslog.d
+      #- ${PWD}/etc/resolv/resolv.conf:/etc/resolv.conf       
+      - ${PWD}:/var/www/html
+      # Se o host for linux descomente essa linha para usar o localtime do host
+      # - /etc/localtime:/etc/localtime:ro 
+    ports:
+      - "8087:80"
