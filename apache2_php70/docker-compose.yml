@@ -27,13 +27,13 @@ services:
   web:
     # image: nginx:1.13
     build: ./web
-    container_name: apache2_php56
+    container_name: apache2_php70
     restart: always
     #command: bash ./apache.sh
     volumes:
       # Site
-      #- C:\home\sistemas:/var/www/html
-      - /home/sistemas:/var/www/html
+      - C:\home\sistemas:/var/www/html
+      #- /home/sistemas:/var/www/html
       # Configuração do proxy reverso
       # - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./web/000-default.conf:/etc/apache2/sites-enabled/default.conf

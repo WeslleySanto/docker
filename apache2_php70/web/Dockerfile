@@ -12,25 +12,20 @@ ENV LANG=en_US.UTF-8
 RUN apt-get update && apt-get install -y \
     apache2 \
     curl \ 
-    tzdata \ 
+    tzdata \
     software-properties-common 
 
 RUN add-apt-repository -y -u ppa:ondrej/php
 
-#Instalar dependencias PHP 5.x
-RUN apt-get update && apt-get install -y php5.6 \
-    php5.6-ldap \
-    php5.6-gd \
-    php5.6-mysql \
-    php5.6-sybase \
-    php5.6-memcached \ 
-    php5.6-apcu \
-    php5.6-curl \
-    php5.6-json \
-    php5.6-mcrypt \
-    php5.6-readline \
-    php5.6-xdebug \
-    php5.6-fpm \
+#Instalar dependencias PHP 7.0
+RUN apt-get update && apt-get install -y php7.0 \
+    php7.0-cli \ 
+    php7.0-fpm \ 
+    php7.0-gd \
+    php7.0-json \
+    php7.0-mysql \
+    php7.0-readline \
+    php7.0-xdebug \
     # Clear cache
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
