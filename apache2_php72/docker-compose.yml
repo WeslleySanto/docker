@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: ./portal
+    container_name: apache2_php72
+    restart: always
+    volumes:
+      # Portal Windows
+      - C:\home\sistemas:/var/www/html
+      # Portal Linux
+      #- /home/sistemas:/var/www/html
+      - ./portal/default.conf:/etc/apache2/sites-enabled/default.conf
+      - ./portal/php.ini:/etc/php/7.1/apache2/php.ini
+    ports:
+      - 80:80
